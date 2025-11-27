@@ -1,3 +1,5 @@
+// This code is to check the connection between the ESP32 and MPU6050 sensor to ensure the correct workings. 
+
 #include <Wire.h>
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
