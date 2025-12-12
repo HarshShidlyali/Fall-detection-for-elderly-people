@@ -5,18 +5,18 @@
 #include <MPU6050.h>
 
 // ---------------- WiFi ----------------
-const char* ssid = "SamsunggalaxyA35";
-const char* password = "29000004";
+const char* ssid = "******************";
+const char* password = "****************";
 
 // ---------------- Telegram Bot ----------------
-const String BOTtoken = "8584168475:AAG8lYazrM8mrz5qn5zw6HDJpW_7TeMYEzU";
-const String CHAT_ID = "1640526464";
+const String BOTtoken = "************************";
+const String CHAT_ID = "*********************";
 
 // ---------------- MPU6050 ----------------
 MPU6050 mpu;
 
 // ---- Thresholds found from your Excel dataset ----
-float ACC_THRESHOLD = 1.3;      // Impact threshold from your dataset
+float ACC_THRESHOLD = 6;      // Impact threshold from your dataset
 float TILT_THRESHOLD = 60.0;    // Body angle threshold
 
 // --------- Auto Calibration Variables ---------
@@ -71,7 +71,7 @@ void sendTelegramAlert(const String &message) {
 
 // --------- AUTO CALIBRATION FUNCTION ----------
 void autoCalibrateMPU() {
-  Serial.println("🛠 Starting Auto-Calibration...");
+  Serial.println("Starting Auto-Calibration...");
   Serial.println("Keep the device still for 3 seconds...");
 
   long sumAx = 0, sumAy = 0, sumAz = 0;
@@ -92,7 +92,7 @@ void autoCalibrateMPU() {
   offsetAy = (float)sumAy / samples;
   offsetAz = ((float)sumAz / samples) - 16384.0;  // remove gravity
 
-  Serial.println("✅ Auto-Calibration Complete!");
+  Serial.println("Auto-Calibration Complete!");
   Serial.print("Ax offset: "); Serial.println(offsetAx);
   Serial.print("Ay offset: "); Serial.println(offsetAy);
   Serial.print("Az offset: "); Serial.println(offsetAz);
@@ -109,7 +109,7 @@ void setup() {
   mpu.initialize();
 
   if (!mpu.testConnection()) {
-    Serial.println("❌ MPU6050 connection failed!");
+    Serial.println("MPU6050 connection failed!");
     while (1);
   }
 
@@ -127,7 +127,7 @@ void setup() {
   }
   Serial.println();
   Serial.println("Connected to WiFi");
-  sendTelegramAlert("🔵 ESP32 Started with Auto-Calibration Enabled!");
+  sendTelegramAlert("ESP32 Started with Auto-Calibration Enabled!");
 }
 
 // read debounced button state; returns true if pressed now
@@ -175,16 +175,16 @@ void loop() {
       fallPending = false;
       fallAlertSent = false; // no final alert
       lastHandledTime = now;
-      Serial.println("❎ False alarm — cancelled by user button");
-      sendTelegramAlert("✅ False alarm cancelled by user (button pressed).");
+      Serial.println("False alarm — cancelled by user button");
+      sendTelegramAlert("False alarm cancelled by user (button pressed).");
     } else if (now - pendingStart >= CONFIRM_WINDOW_MS) {
       // confirmation window expired -> send final alert if not already sent
       fallPending = false;
       if (!fallAlertSent) {
         fallAlertSent = true;
         lastHandledTime = now;
-        String msg = "🚨 FALL DETECTED!\nACC: " + String(ACC, 3) + "\nTilt: " + String(tilt, 2);
-        Serial.println("‼️ Final fall alert sent.");
+        String msg = "FALL DETECTED! Need Urgent Attention.";
+        Serial.println("Final fall alert sent.!!");
         sendTelegramAlert(msg);
       }
     }
@@ -199,9 +199,9 @@ void loop() {
       // start pending confirmation window
       fallPending = true;
       pendingStart = now;
-      Serial.println("⚠️ Potential fall detected — waiting 5s for cancel button...");
+      Serial.println("Potential fall detected — waiting 5s for cancel button...");
       // Inform remote user there's a potential fall and they have 5s to cancel
-      String warn = "⚠️ Potential fall detected — press CANCEL button within 5 seconds to stop the alert.\n(If not cancelled, a fall alert will be sent.)\nACC: " + String(ACC, 3) + "\nTilt: " + String(tilt, 2);
+      String warn = "Potential fall detected —";
       sendTelegramAlert(warn);
     }
   }
