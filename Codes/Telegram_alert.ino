@@ -27,7 +27,7 @@ void setup() {
 void loop() {
   // Example: Send alert every 60 seconds
   delay(60000);
-  sendTelegramAlert("🔄 Regular status update - System running normally");
+  sendTelegramAlert("Regular status update - System running normally");
 }
 
 void sendTelegramAlert(String message) {
