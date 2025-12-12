@@ -38,8 +38,7 @@ Meaning, Tilt alone cannot separate fall from normal activity in dataset. so I c
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Results
 ### ![IMG_20251212_223905](https://github.com/user-attachments/assets/a0f799f9-cd4d-45a8-8fcc-0ab46b1575ef)
-
-![Uploading IMG_20251212_223958.jpg…]()
-![Uploading IMG_20251212_224036.jpg…]()
-![Uploading IMG_20251212_224109.jpg…]()
-
+![IMG_20251212_223958](https://github.com/user-attachments/assets/8773cf29-8738-447e-b3a2-bdca95d482f0)
+![IMG_20251212_224036](https://github.com/user-attachments/assets/ae9d4030-7f76-4fda-9017-a582dd5dd526)
+![IMG_20251212_224109](https://github.com/user-attachments/assets/d46159ef-629c-4663-99a7-92ff30b504bc)
+![IMG_20251212_224132](https://github.com/user-attachments/assets/b020a01b-634f-42e9-b2d1-fd4d221d797e)
