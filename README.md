@@ -19,21 +19,19 @@ Meaning, Tilt alone cannot separate fall from normal activity in dataset. so I c
 
 ## Final Fall-Detection Threshold (Accurate for the Data)
 ### * A fall occurs when BOTH:
------ > ACC (impact) > 6.0 g
-&
------ > Tilt > 60° after the impact
+----- > ACC (impact) > 6.0 g & Tilt > 60° after the impact
 (staying horizontal)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Why This Works for Your Dataset
-*** Normal Activity:
-Tilt ≈ 45°–90° (lying, sitting, bending)
-ACC < 5g (no impact)
+## Why This Works for Your Dataset
+### *** Normal Activity:
+> Tilt ≈ 45°–90° (lying, sitting, bending)
+> ACC < 5g (no impact)
 
-*** Fall Activity:
-ACC spikes up to 14g
-Tilt goes to ~90° afterward
-
+### *** Fall Activity:
+> ACC spikes up to 14g
+> Tilt goes to ~90° afterward
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 FINAL FALL THRESHOLD (Derived from data set)
 **** ACC > 6g + Tilt > 60° = TRUE FALL
