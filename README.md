@@ -1,10 +1,7 @@
-## This prototype Represents the Fall detection for the elderly people. In this, we used machine learning called TinyML which is used for low end end devices.
-## Firstly, I took the predefined data set disitiguishing between the real fall dataset and the normal activity dataset.
-## then I compared the data set i.e Real fall dataset and the normal activity dataset.
-## and I computed the true tilt + acceleration differences, and now we can define the real FALL THRESHOLD.
+## This prototype Represents the Fall detection for the elderly people. In this, we used machine learning called TinyML which is used for low end end devices.Firstly, I took the predefined data set disitiguishing between the real fall dataset and the normal activity dataset.then I compared the data set i.e Real fall dataset and the normal activity dataset.and I computed the true tilt + acceleration differences, and now we can define the real FALL THRESHOLD.
 
-RESULTS (Based on Actual Data)
-Tilt Angle Comparison
+## RESULTS (Based on Actual Data)
+### Tilt Angle Comparison
 
 Metric	     Fall Data	   Normal Data
 Tilt Mean	    61.39°	       59.32°
